@@ -2,9 +2,9 @@
 
 由skill4agent.com提供的一个用于安装 Agent Skills 的命令行工具。
 
-[![skill4agent 网站首页](./assets/skill4agent_zh.png)](https://www.skill4agent.com)
+[![skill4agent 网站首页](https://raw.githubusercontent.com/osulivan/skill4agent-cli/main/assets/skill4agent_zh.png)](https://www.skill4agent.com)
 
-[English](README.md) | [中文](README_CN.md)
+[English](https://github.com/osulivan/skill4agent-cli/blob/main/README.md) | [中文](https://www.npmjs.com/package/skill4agent)
 
 ## 快速开始
 

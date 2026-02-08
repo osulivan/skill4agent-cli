@@ -2,9 +2,9 @@
 
 By skill4agent.com, a command-line tool for installing Agent Skills.
 
-[![skill4agent website](./assets/skill4agent_en.png)](https://www.skill4agent.com)
+[![skill4agent website](https://raw.githubusercontent.com/osulivan/skill4agent-cli/main/assets/skill4agent_en.png)](https://www.skill4agent.com)
 
-[English](README.md) | [中文](README_CN.md)
+[English](https://www.npmjs.com/package/skill4agent) | [中文](https://github.com/osulivan/skill4agent-cli/blob/main/README_CN.md)
 
 ## Quick Start
 
