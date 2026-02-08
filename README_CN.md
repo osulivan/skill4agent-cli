@@ -4,7 +4,7 @@
 
 [![skill4agent 网站首页](https://raw.githubusercontent.com/osulivan/skill4agent-cli/main/assets/skill4agent_zh.png)](https://www.skill4agent.com)
 
-[English](https://github.com/osulivan/skill4agent-cli/blob/main/README.md) | [中文](https://www.npmjs.com/package/skill4agent)
+[English](https://github.com/osulivan/skill4agent-cli/blob/main/README.md) | [中文](https://github.com/osulivan/skill4agent-cli/blob/main/README_CN.md)
 
 ## 快速开始
 
