@@ -1,14 +1,33 @@
 # skill4agent CLI
 
-By skill4agent.com, a command-line tool for installing Agent Skills.
+[![npm version](https://img.shields.io/npm/v/skill4agent.svg)](https://www.npmjs.com/package/skill4agent)
+[![npm downloads](https://img.shields.io/npm/dm/skill4agent.svg)](https://www.npmjs.com/package/skill4agent)
+[![GitHub stars](https://img.shields.io/github/stars/osulivan/skill4agent-cli.svg)](https://github.com/osulivan/skill4agent-cli)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
+
+> 🚀 **The easiest way to install and manage Agent Skills for AI coding assistants**
+
+By [skill4agent.com](https://www.skill4agent.com) - A command-line tool for installing Agent Skills.
 
 [![skill4agent website](https://raw.githubusercontent.com/osulivan/skill4agent-cli/main/assets/skill4agent_en.png)](https://www.skill4agent.com)
 
 [English](https://github.com/osulivan/skill4agent-cli/blob/main/README.md) | [中文](https://github.com/osulivan/skill4agent-cli/blob/main/README_CN.md)
 
+---
+
+## 🌟 Why skill4agent?
+
+- **🎯 Curated Skills**: Access hundreds of high-quality skills from [skill4agent.com](https://www.skill4agent.com)
+- **⚡ One-Command Install**: Install any skill with a single command
+- **🔧 Multi-IDE Support**: Works with Trae, Cursor, Claude, and more
+- **🌍 Global & Project**: Install globally or per-project
+- **📦 Smart Management**: List, update, and uninstall skills easily
+
+---
+
 ## Quick Start
 
-> 💡 Find available skills at [skill4agent.com](https://skill4agent.com)
+> 💡 Find available skills at [skill4agent.com](https://www.skill4agent.com)
 > - `<source>`: The source repository (e.g., `anthropics/skills`)
 > - `<skill>`: The skill name (e.g., `frontend-design`)
 
@@ -131,3 +150,28 @@ npx skill4agent uninstall frontend-design --global
 # Uninstall from all projects only
 npx skill4agent uninstall frontend-design --project
 ```
+
+---
+
+## 🔗 Useful Links
+
+- 🌐 **Website**: [skill4agent.com](https://www.skill4agent.com) - Discover and browse all available skills
+- 📦 **npm Package**: [npmjs.com/package/skill4agent](https://www.npmjs.com/package/skill4agent)
+- 💻 **GitHub Repository**: [github.com/osulivan/skill4agent-cli](https://github.com/osulivan/skill4agent-cli)
+- 📝 **Submit Skills**: [skill4agent.com/submit](https://www.skill4agent.com/submit) - Share your own skills
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guide](https://github.com/osulivan/skill4agent-cli/blob/main/CONTRIBUTING.md) for details.
+
+## 📄 License
+
+[MIT](https://github.com/osulivan/skill4agent-cli/blob/main/LICENSE)
+
+---
+
+<p align="center">
+  Made with ❤️ by <a href="https://www.skill4agent.com">skill4agent.com</a>
+</p>
