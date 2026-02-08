@@ -4,6 +4,8 @@
 
 [![skill4agent 网站首页](./assets/skill4agent_zh.jpg)](https://www.skill4agent.com)
 
+[English](README.md) | [中文](README_CN.md)
+
 ## 快速开始
 
 > 💡 在 [skill4agent.com](https://skill4agent.com) 查找可用技能
