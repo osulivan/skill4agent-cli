@@ -17,7 +17,7 @@
 
 ## 🌟 为什么选择 skill4agent？
 
-- **🎯 精选技能**: 从 [skill4agent.com](https://www.skill4agent.com) 访问数百个高质量技能
+- **🎯 精选技能**: 从 [skill4agent.com](https://www.skill4agent.com) 访问海量高质量 skills
 - **⚡ 一键安装**: 用单个命令安装任何技能
 - **🔧 多 IDE 支持**: 支持 Trae、Cursor、Claude 等
 - **🌍 全局与项目**: 支持全局安装或按项目安装
@@ -155,20 +155,9 @@ npx skill4agent uninstall frontend-design --project
 
 ## 🔗 有用链接
 
-- 🌐 **网站**: [skill4agent.com](https://www.skill4agent.com) - 发现并浏览所有可用技能
+- 🌐 **网站**: [skill4agent.com](https://www.skill4agent.com) - 发现并浏览所有可用 skills
 - 📦 **npm 包**: [npmjs.com/package/skill4agent](https://www.npmjs.com/package/skill4agent)
 - 💻 **GitHub 仓库**: [github.com/osulivan/skill4agent-cli](https://github.com/osulivan/skill4agent-cli)
-- 📝 **提交技能**: [skill4agent.com/submit](https://www.skill4agent.com/submit) - 分享你自己的技能
-
----
-
-## 🤝 贡献
-
-我们欢迎贡献！请查看我们的 [贡献指南](https://github.com/osulivan/skill4agent-cli/blob/main/CONTRIBUTING.md) 了解详情。
-
-## 📄 许可证
-
-[MIT](https://github.com/osulivan/skill4agent-cli/blob/main/LICENSE)
 
 ---
 

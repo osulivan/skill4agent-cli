@@ -17,7 +17,7 @@ By [skill4agent.com](https://www.skill4agent.com) - A command-line tool for inst
 
 ## 🌟 Why skill4agent?
 
-- **🎯 Curated Skills**: Access hundreds of high-quality skills from [skill4agent.com](https://www.skill4agent.com)
+- **🎯 Curated Skills**: Access a vast collection of high-quality skills from [skill4agent.com](https://www.skill4agent.com)
 - **⚡ One-Command Install**: Install any skill with a single command
 - **🔧 Multi-IDE Support**: Works with Trae, Cursor, Claude, and more
 - **🌍 Global & Project**: Install globally or per-project
@@ -158,17 +158,6 @@ npx skill4agent uninstall frontend-design --project
 - 🌐 **Website**: [skill4agent.com](https://www.skill4agent.com) - Discover and browse all available skills
 - 📦 **npm Package**: [npmjs.com/package/skill4agent](https://www.npmjs.com/package/skill4agent)
 - 💻 **GitHub Repository**: [github.com/osulivan/skill4agent-cli](https://github.com/osulivan/skill4agent-cli)
-- 📝 **Submit Skills**: [skill4agent.com/submit](https://www.skill4agent.com/submit) - Share your own skills
-
----
-
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guide](https://github.com/osulivan/skill4agent-cli/blob/main/CONTRIBUTING.md) for details.
-
-## 📄 License
-
-[MIT](https://github.com/osulivan/skill4agent-cli/blob/main/LICENSE)
 
 ---
 
