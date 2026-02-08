@@ -45,3 +45,6 @@ temp/
 .trae/
 .cursor/
 .claude/
+
+# Scripts
+publish.sh

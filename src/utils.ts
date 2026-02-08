@@ -1,6 +1,3 @@
-import fs from 'fs-extra';
-import path from 'path';
-
 export async function extractZip(zipPath: string, destDir: string): Promise<void> {
   const AdmZip = require('adm-zip');
   const zip = new AdmZip(zipPath);

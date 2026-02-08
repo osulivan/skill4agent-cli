@@ -37,16 +37,16 @@ export async function list(): Promise<void> {
     return;
   }
 
-  // 按名称排序
+  // Sort by name
   allSkills.sort((a, b) => a.name.localeCompare(b.name));
 
-  // 计算总安装次数
+  // Calculate total installations
   const totalInstalls = allSkills.reduce((sum, skill) => sum + skill.scopes.length, 0);
 
   console.log(chalk.blue(`\n📦 Installed Skills (${allSkills.length} skills, ${totalInstalls} installs)`));
   console.log(chalk.gray('─'.repeat(80)));
 
-  // 表头
+  // Table header
   const nameWidth = 25;
   const sourceWidth = 25;
   const scopeWidth = 15;
@@ -58,10 +58,10 @@ export async function list(): Promise<void> {
   );
   console.log(chalk.gray('─'.repeat(80)));
 
-  // 数据行
+  // Data rows
   for (const { name, scopes } of allSkills) {
-    // 按时间倒序，取最新的安装
-    const latestScope = [...scopes].sort((a, b) => 
+    // Sort by time descending, get the latest installation
+    const latestScope = [...scopes].sort((a, b) =>
       new Date(b.installedAt).getTime() - new Date(a.installedAt).getTime()
     )[0];
     

@@ -308,14 +308,14 @@ export async function add(topSource: string, skillName: string): Promise<void> {
     }
   }
 
-  // 更新安装量
+  // Update installation count
   await incrementInstallCount(topSource, skillName);
 
-  // 记录安装信息到索引
+  // Record installation info to index
   const installScope = isGlobal ? 'global' : getCurrentScope();
   const skillDir = path.join(basePath, UNIVERSAL_PATH, skillName);
   
-  // 收集 symlink 和 copy 的目录
+  // Collect symlink and copy directories
   const symlinkDirs: string[] = [];
   const copyDirs: string[] = [];
   

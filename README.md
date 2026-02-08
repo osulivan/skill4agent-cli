@@ -2,7 +2,7 @@
 
 By skill4agent.com, a command-line tool for installing Agent Skills.
 
-[![skill4agent website](https://www.skill4agent.com/images/skill4agent_en.jpg)](https://www.skill4agent.com)
+[![skill4agent website](./assets/skill4agent_en.jpg)](https://www.skill4agent.com)
 
 ## Quick Start
 

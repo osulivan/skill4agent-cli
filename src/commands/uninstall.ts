@@ -24,21 +24,21 @@ function removeDirectory(dirPath: string): boolean {
 function uninstallScope(skill: InstalledSkill): number {
   let removedCount = 0;
 
-  // 删除 symlink 目录
+  // Remove symlink directories
   for (const linkPath of skill.locations.symlink) {
     if (removeDirectory(linkPath)) {
       removedCount++;
     }
   }
 
-  // 删除 copy 目录
+  // Remove copy directories
   for (const copyPath of skill.locations.copy) {
     if (removeDirectory(copyPath)) {
       removedCount++;
     }
   }
 
-  // 删除主目录
+  // Remove main directory
   if (removeDirectory(skill.locations.universal)) {
     removedCount++;
   }
@@ -55,7 +55,7 @@ export async function uninstall(skillName: string, options: UninstallOptions = {
     return;
   }
 
-  // 确定要卸载的范围
+  // Determine the scope to uninstall
   let targetScopes: InstalledSkill[] = [];
 
   if (options.global && options.project) {
@@ -64,7 +64,7 @@ export async function uninstall(skillName: string, options: UninstallOptions = {
   }
 
   if (options.global) {
-    // 只卸载 global
+    // Only uninstall global
     targetScopes = scopes.filter(s => isGlobalScope(s.scope));
     if (targetScopes.length === 0) {
       console.log(chalk.yellow(`\n⚠️  "${skillName}" is not installed globally.`));
@@ -72,7 +72,7 @@ export async function uninstall(skillName: string, options: UninstallOptions = {
       return;
     }
   } else if (options.project) {
-    // 卸载所有 project（非 global）
+    // Uninstall all projects (non-global)
     targetScopes = scopes.filter(s => !isGlobalScope(s.scope));
     if (targetScopes.length === 0) {
       console.log(chalk.yellow(`\n⚠️  "${skillName}" is not installed in any project.`));
@@ -80,13 +80,13 @@ export async function uninstall(skillName: string, options: UninstallOptions = {
       return;
     }
   } else {
-    // 默认：卸载所有
+    // Default: uninstall all
     targetScopes = scopes;
   }
 
   console.log(chalk.blue(`\n📦 Uninstalling skill: ${skillName}`));
 
-  // 显示将要卸载的 scope
+  // Show scopes to be uninstalled
   console.log(chalk.yellow('\n⚠️  This will remove the following installations:'));
   for (const scope of targetScopes) {
     const scopeType = isGlobalScope(scope.scope) ? 'Global' : `Project (${scope.scope})`;
@@ -113,7 +113,7 @@ export async function uninstall(skillName: string, options: UninstallOptions = {
     return;
   }
 
-  // 执行卸载
+  // Execute uninstall operation
   let totalRemoved = 0;
   for (const scope of targetScopes) {
     const removed = uninstallScope(scope);
@@ -121,7 +121,7 @@ export async function uninstall(skillName: string, options: UninstallOptions = {
     removeSkillByScope(skillName, scope.scope);
   }
 
-  // 检查是否还有剩余 scope
+  // Check if there are remaining scopes
   const remainingScopes = getSkillScopes(skillName);
   if (remainingScopes.length === 0) {
     console.log(chalk.green(`\n🎉 Successfully uninstalled "${skillName}" completely (${totalRemoved} item${totalRemoved > 1 ? 's' : ''} removed).\n`));

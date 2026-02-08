@@ -16,7 +16,7 @@ export interface InstalledSkill {
   name: string;
   source: string;
   installedAt: string;
-  scope: string;  // 项目路径或 "global"
+  scope: string;  // Project path or "global"
   locations: SkillLocation;
 }
 
@@ -33,7 +33,7 @@ function ensureSkill4AgentDir(): void {
   }
 }
 
-// 旧版本数据结构（兼容用）
+// Old version data structure (for backward compatibility)
 interface OldInstalledSkill {
   name: string;
   source: string;
@@ -48,13 +48,13 @@ interface OldInstalledSkill {
 
 function migrateOldData(oldData: Record<string, OldInstalledSkill>): Record<string, InstalledSkill[]> {
   const newData: Record<string, InstalledSkill[]> = {};
-  
+
   for (const [skillName, skill] of Object.entries(oldData)) {
-    // 判断是 global 还是 project
+    // Determine if it's global or project
     const isGlobal = skill.locations.universal.startsWith(path.join(os.homedir(), '.agents'));
     const scope = isGlobal ? 'global' : process.cwd();
-    
-    // 将旧数据转换为新格式
+
+    // Convert old data to new format
     newData[skillName] = [{
       name: skill.name,
       source: skill.source,
@@ -67,7 +67,7 @@ function migrateOldData(oldData: Record<string, OldInstalledSkill>): Record<stri
       },
     }];
   }
-  
+
   return newData;
 }
 
@@ -82,7 +82,7 @@ export function readIndex(): Record<string, InstalledSkill[]> {
     const content = fs.readFileSync(INDEX_FILE, 'utf-8');
     const data = JSON.parse(content);
     
-    // 检查是否是旧格式（对象值不是数组）
+    // Check if it's old format (object values are not arrays)
     const isOldFormat = Object.values(data).some(val => !Array.isArray(val));
     
     if (isOldFormat) {
@@ -122,23 +122,23 @@ export function addOrUpdateSkill(skill: InstalledSkill): void {
 
   const existingIndex = index[skill.name].findIndex(s => s.scope === skill.scope);
   if (existingIndex >= 0) {
-    // 合并 locations，而不是覆盖
+    // Merge locations instead of overwriting
     const existing = index[skill.name][existingIndex];
 
-    // 合并 universal 路径（如果不同）
+    // Merge universal path (if different)
     if (existing.locations.universal !== skill.locations.universal) {
-      // 如果 universal 路径不同，需要特殊处理
-      // 这种情况通常不应该发生，但以防万一，我们保留新的
+      // If universal paths are different, handle specially
+      // This shouldn't normally happen, but just in case, keep the new one
       existing.locations.universal = skill.locations.universal;
     }
 
-    // 合并 symlink 目录（去重，同时从 copy 中移除）
+    // Merge symlink directories (deduplicate and remove from copy)
     for (const link of skill.locations.symlink) {
-      // 如果已经在 symlink 中，跳过
+      // Skip if already in symlink
       if (existing.locations.symlink.includes(link)) {
         continue;
       }
-      // 如果之前在 copy 中，从 copy 移除并添加到 symlink
+      // If previously in copy, remove from copy and add to symlink
       const copyIndex = existing.locations.copy.indexOf(link);
       if (copyIndex >= 0) {
         existing.locations.copy.splice(copyIndex, 1);
@@ -146,13 +146,13 @@ export function addOrUpdateSkill(skill: InstalledSkill): void {
       existing.locations.symlink.push(link);
     }
 
-    // 合并 copy 目录（去重，同时从 symlink 中移除）
+    // Merge copy directories (deduplicate and remove from symlink)
     for (const copy of skill.locations.copy) {
-      // 如果已经在 copy 中，跳过
+      // Skip if already in copy
       if (existing.locations.copy.includes(copy)) {
         continue;
       }
-      // 如果之前在 symlink 中，从 symlink 移除并添加到 copy
+      // If previously in symlink, remove from symlink and add to copy
       const symlinkIndex = existing.locations.symlink.indexOf(copy);
       if (symlinkIndex >= 0) {
         existing.locations.symlink.splice(symlinkIndex, 1);
@@ -160,17 +160,17 @@ export function addOrUpdateSkill(skill: InstalledSkill): void {
       existing.locations.copy.push(copy);
     }
 
-    // 更新安装时间（取最新的）
+    // Update installation time (take the latest)
     if (new Date(skill.installedAt) > new Date(existing.installedAt)) {
       existing.installedAt = skill.installedAt;
     }
 
-    // 更新 source（如果有变化）
+    // Update source (if changed)
     if (skill.source !== existing.source) {
       existing.source = skill.source;
     }
   } else {
-    // 添加新的 scope
+    // Add new scope
     index[skill.name].push(skill);
   }
 
@@ -185,8 +185,8 @@ export function removeSkillByScope(skillName: string, scope: string): void {
   }
   
   index[skillName] = index[skillName].filter(s => s.scope !== scope);
-  
-  // 如果没有 scope 了，删除整个 skill
+
+  // If no scopes left, delete the entire skill
   if (index[skillName].length === 0) {
     delete index[skillName];
   }
