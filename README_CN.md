@@ -1,10 +1,29 @@
 # skill4agent CLI
 
-由skill4agent.com提供的一个用于安装 Agent Skills 的命令行工具。
+[![npm version](https://img.shields.io/npm/v/skill4agent.svg)](https://www.npmjs.com/package/skill4agent)
+[![npm downloads](https://img.shields.io/npm/dm/skill4agent.svg)](https://www.npmjs.com/package/skill4agent)
+[![GitHub stars](https://img.shields.io/github/stars/osulivan/skill4agent-cli.svg)](https://github.com/osulivan/skill4agent-cli)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
+
+> 🚀 **安装和管理 AI 编程助手 Agent Skills 的最简单方式**
+
+由 [skill4agent.com](https://www.skill4agent.com) 提供 - 一个用于安装 Agent Skills 的命令行工具。
 
 [![skill4agent 网站首页](https://raw.githubusercontent.com/osulivan/skill4agent-cli/main/assets/skill4agent_zh.png)](https://www.skill4agent.com)
 
 [English](https://github.com/osulivan/skill4agent-cli/blob/main/README.md) | [中文](https://github.com/osulivan/skill4agent-cli/blob/main/README_CN.md)
+
+---
+
+## 🌟 为什么选择 skill4agent？
+
+- **🎯 精选技能**: 从 [skill4agent.com](https://www.skill4agent.com) 访问数百个高质量技能
+- **⚡ 一键安装**: 用单个命令安装任何技能
+- **🔧 多 IDE 支持**: 支持 Trae、Cursor、Claude 等
+- **🌍 全局与项目**: 支持全局安装或按项目安装
+- **📦 智能管理**: 轻松列出、更新和卸载技能
+
+---
 
 ## 快速开始
 
@@ -131,3 +150,28 @@ npx skill4agent uninstall frontend-design --global
 # 仅从所有项目卸载
 npx skill4agent uninstall frontend-design --project
 ```
+
+---
+
+## 🔗 有用链接
+
+- 🌐 **网站**: [skill4agent.com](https://www.skill4agent.com) - 发现并浏览所有可用技能
+- 📦 **npm 包**: [npmjs.com/package/skill4agent](https://www.npmjs.com/package/skill4agent)
+- 💻 **GitHub 仓库**: [github.com/osulivan/skill4agent-cli](https://github.com/osulivan/skill4agent-cli)
+- 📝 **提交技能**: [skill4agent.com/submit](https://www.skill4agent.com/submit) - 分享你自己的技能
+
+---
+
+## 🤝 贡献
+
+我们欢迎贡献！请查看我们的 [贡献指南](https://github.com/osulivan/skill4agent-cli/blob/main/CONTRIBUTING.md) 了解详情。
+
+## 📄 许可证
+
+[MIT](https://github.com/osulivan/skill4agent-cli/blob/main/LICENSE)
+
+---
+
+<p align="center">
+  用 ❤️ 由 <a href="https://www.skill4agent.com">skill4agent.com</a> 制作
+</p>
