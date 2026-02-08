@@ -2,7 +2,7 @@
 
 由skill4agent.com提供的一个用于安装 Agent Skills 的命令行工具。
 
-[![skill4agent 网站首页](./assets/skill4agent_zh.jpg)](https://www.skill4agent.com)
+[![skill4agent 网站首页](./assets/skill4agent_zh.png)](https://www.skill4agent.com)
 
 [English](README.md) | [中文](README_CN.md)
 
