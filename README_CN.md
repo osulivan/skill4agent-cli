@@ -17,11 +17,15 @@
 
 ## 🌟 为什么选择 skill4agent？
 
-- **🎯 精选技能**: 从 [skill4agent.com](https://www.skill4agent.com) 访问海量高质量 skills
-- **⚡ 一键安装**: 用单个命令安装任何技能
-- **🔧 多 IDE 支持**: 支持 Trae、Cursor、Claude 等
-- **🌍 全局与项目**: 支持全局安装或按项目安装
-- **📦 智能管理**: 轻松列出、更新和卸载技能
+- **🎯 精选技能**: 从 [skill4agent.com](https://www.skill4agent.com) 快速安装海量高质量 skills
+- **� 双语支持**: 每个 skill 都提供中英文翻译版本，打破语言障碍
+- **✅ 质量检测**: 自动检测 skill 中的脚本，确保安全可靠
+- **🏷️ 智能分类**: 精细的分类和标签系统，帮你快速找到合适的 skill
+- **🤖 AI 友好**: 标签信息写入 SKILL.md，让 AI Agent 更精准匹配你的需求
+- **⚡ 一键安装**: 用单个命令安装任何 skill 到多个 IDE
+- **🔧 多 IDE 支持**: 支持 Trae、Cursor、Claude、OpenCode、OpenClaw 等
+- **🌍 全局与项目安装**: 支持全局安装或按项目安装
+- **📦 智能管理**: 轻松列出和卸载技能
 
 ---
 

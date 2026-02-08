@@ -18,10 +18,14 @@ By [skill4agent.com](https://www.skill4agent.com) - A command-line tool for inst
 ## 🌟 Why skill4agent?
 
 - **🎯 Curated Skills**: Access a vast collection of high-quality skills from [skill4agent.com](https://www.skill4agent.com)
-- **⚡ One-Command Install**: Install any skill with a single command
-- **🔧 Multi-IDE Support**: Works with Trae, Cursor, Claude, and more
-- **🌍 Global & Project**: Install globally or per-project
-- **📦 Smart Management**: List, update, and uninstall skills easily
+- **🌐 Bilingual Support**: Every skill includes both English and Chinese translations, breaking language barriers
+- **✅ Quality Assurance**: Automated script detection ensures all skills are safe and reliable
+- **🏷️ Smart Categorization**: Fine-grained categories and tags help you quickly find the right skill
+- **🤖 AI-Optimized**: Tags are embedded in SKILL.md, enabling AI Agents to match your needs more accurately
+- **⚡ One-Command Install**: Install any skill to multiple IDEs with a single command
+- **🔧 Multi-IDE Support**: Works with Trae, Cursor, Claude, OpenCode, OpenClaw, and more
+- **🌍 Global & Project Installation**: Install globally or per-project
+- **📦 Smart Management**: List and uninstall skills easily
 
 ---
 
