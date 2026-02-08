@@ -1,0 +1,29 @@
+# 开发文件
+src/
+tsconfig.json
+*.sh
+
+# 测试文件
+test-api.js
+
+# 开发依赖相关
+node_modules/
+
+# IDE
+.vscode/
+.idea/
+
+# 日志
+*.log
+npm-debug.log*
+
+# 操作系统文件
+.DS_Store
+Thumbs.db
+
+# 版本控制
+.git/
+.gitignore
+
+# 本地数据目录
+.agents/
