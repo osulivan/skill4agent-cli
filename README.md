@@ -1,7 +1,7 @@
 # skill4agent CLI
 
-[![npm version](https://img.shields.io/npm/v/skill4agent.svg)](https://www.npmjs.com/package/skill4agent)
-[![npm downloads](https://img.shields.io/npm/dm/skill4agent.svg)](https://www.npmjs.com/package/skill4agent)
+[![npm version](https://img.shields.io/npm/v/@skill4agent/cli.svg)](https://www.npmjs.com/package/@skill4agent/cli)
+[![npm downloads](https://img.shields.io/npm/dm/@skill4agent/cli.svg)](https://www.npmjs.com/package/@skill4agent/cli)
 [![GitHub stars](https://img.shields.io/github/stars/osulivan/skill4agent-cli.svg)](https://github.com/osulivan/skill4agent-cli)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 
@@ -29,7 +29,15 @@ By [skill4agent.com](https://www.skill4agent.com) - A command-line tool for inst
 
 ---
 
-## Quick Start
+## Installation
+
+```bash
+# Using npx (recommended - no installation required)
+npx skill4agent <command>
+
+# Or install globally
+npm install -g @skill4agent/cli
+```
 
 > 💡 Find available skills at [skill4agent.com](https://www.skill4agent.com)
 > - `<source>`: The source repository (e.g., `anthropics/skills`)
@@ -160,7 +168,7 @@ npx skill4agent uninstall frontend-design --project
 ## 🔗 Useful Links
 
 - 🌐 **Website**: [skill4agent.com](https://www.skill4agent.com) - Discover and browse all available skills
-- 📦 **npm Package**: [npmjs.com/package/skill4agent](https://www.npmjs.com/package/skill4agent)
+- 📦 **npm Package**: [npmjs.com/package/@skill4agent/cli](https://www.npmjs.com/package/@skill4agent/cli)
 - 💻 **GitHub Repository**: [github.com/osulivan/skill4agent-cli](https://github.com/osulivan/skill4agent-cli)
 
 ---

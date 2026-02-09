@@ -1,7 +1,7 @@
 # skill4agent CLI
 
-[![npm version](https://img.shields.io/npm/v/skill4agent.svg)](https://www.npmjs.com/package/skill4agent)
-[![npm downloads](https://img.shields.io/npm/dm/skill4agent.svg)](https://www.npmjs.com/package/skill4agent)
+[![npm version](https://img.shields.io/npm/v/@skill4agent/cli.svg)](https://www.npmjs.com/package/@skill4agent/cli)
+[![npm downloads](https://img.shields.io/npm/dm/@skill4agent/cli.svg)](https://www.npmjs.com/package/@skill4agent/cli)
 [![GitHub stars](https://img.shields.io/github/stars/osulivan/skill4agent-cli.svg)](https://github.com/osulivan/skill4agent-cli)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 
@@ -29,9 +29,17 @@
 
 ---
 
-## 快速开始
+## 安装
 
-> 💡 在 [skill4agent.com](https://skill4agent.com) 查找可用技能
+```bash
+# 使用 npx（推荐 - 无需安装）
+npx skill4agent <命令>
+
+# 或全局安装
+npm install -g @skill4agent/cli
+```
+
+> 💡 在 [skill4agent.com](https://www.skill4agent.com) 查找可用技能
 > - `<源仓库>`: 源仓库名称（如 `anthropics/skills`）
 > - `<技能名>`: 技能名称（如 `frontend-design`）
 
@@ -160,7 +168,7 @@ npx skill4agent uninstall frontend-design --project
 ## 🔗 有用链接
 
 - 🌐 **网站**: [skill4agent.com](https://www.skill4agent.com) - 发现并浏览所有可用 skills
-- 📦 **npm 包**: [npmjs.com/package/skill4agent](https://www.npmjs.com/package/skill4agent)
+- 📦 **npm 包**: [npmjs.com/package/@skill4agent/cli](https://www.npmjs.com/package/@skill4agent/cli)
 - 💻 **GitHub 仓库**: [github.com/osulivan/skill4agent-cli](https://github.com/osulivan/skill4agent-cli)
 
 ---

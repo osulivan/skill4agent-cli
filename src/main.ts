@@ -4,13 +4,19 @@ import { install } from './commands/install';
 import { add } from './commands/add';
 import { list, search, update } from './commands/list';
 import { uninstall } from './commands/uninstall';
+import { readFileSync } from 'fs';
+import { join } from 'path';
+
+// Read version from package.json
+const packageJson = JSON.parse(readFileSync(join(__dirname, '../package.json'), 'utf-8'));
+const version = packageJson.version;
 
 const program = new Command();
 
 program
   .name('skill4agent')
   .description('CLI tool for installing and managing agent skills')
-  .version('1.0.0');
+  .version(version);
 
 program
   .command('add <top_source> <skill_name>')
