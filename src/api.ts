@@ -109,3 +109,29 @@ export async function incrementInstallCount(topSource: string, skillName: string
     // 静默失败，不影响安装流程
   }
 }
+
+export interface SearchResult {
+  skillId: string;
+  skillName: string;
+  description: string;
+  tags: string;
+  categoryName: string;
+  totalInstalls: number;
+  originalLanguage: string;
+  hasTranslation: boolean;
+  relevance: number;
+  has_script: boolean;
+}
+
+export interface SearchResponse {
+  skills: SearchResult[];
+  totalResults: number;
+  returnedCount: number;
+  query: string;
+}
+
+export async function searchSkills(keyword: string, limit: number = 10): Promise<SearchResponse> {
+  const url = `${API_BASE}/search?keyword=${encodeURIComponent(keyword)}&limit=${limit}`;
+  const response = await axios.get<SearchResponse>(url);
+  return response.data;
+}

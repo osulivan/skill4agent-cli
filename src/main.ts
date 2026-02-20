@@ -2,7 +2,8 @@ import chalk from 'chalk';
 import { Command } from 'commander';
 import { install } from './commands/install';
 import { add } from './commands/add';
-import { list, search, update } from './commands/list';
+import { list, update } from './commands/list';
+import { search } from './commands/search';
 import { uninstall } from './commands/uninstall';
 import { readFileSync } from 'fs';
 import { join } from 'path';
@@ -65,7 +66,11 @@ program
 program
   .command('search <query>')
   .description('Search for skills')
-  .action(search);
+  .option('-l, --limit <number>', 'Number of results to return', '10')
+  .action(async (query: string, options: any) => {
+    const limit = parseInt(options.limit) || 10;
+    await search(query, limit);
+  });
 
 program
   .command('update [skill_name]')

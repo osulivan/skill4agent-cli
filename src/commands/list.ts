@@ -77,10 +77,6 @@ export async function list(): Promise<void> {
   console.log(chalk.gray(`\nTotal: ${allSkills.length} skill${allSkills.length > 1 ? 's' : ''} (${totalInstalls} install${totalInstalls > 1 ? 's' : ''})\n`));
 }
 
-export async function search(query: string): Promise<void> {
-  console.log('search command', query);
-}
-
 export async function update(skillName?: string): Promise<void> {
   console.log('update command', skillName);
 }

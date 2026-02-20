@@ -59,6 +59,26 @@ npx skill4agent uninstall <技能名>
 
 ## 命令说明
 
+### `search` - 搜索在线技能
+
+在技能库中搜索技能。
+
+```bash
+npx skill4agent search <关键词> [选项]
+```
+
+| 选项 | 说明 | 默认值 |
+|------|------|--------|
+| `-l, --limit` | 返回结果数量 | 10 |
+
+**输出字段说明：**
+- **source**: 源仓库（如 `vercel-labs-agent-skills`）
+- **skill_name**: 技能名称
+- **category**: 技能分类
+- **description**: 完整技能描述
+- **tags**: 技能标签
+- **installs**: 总安装量
+
 ### `add` - 交互式安装
 
 交互式安装，通过提示选择配置选项。

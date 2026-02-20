@@ -59,6 +59,26 @@ npx skill4agent uninstall <skill>
 
 ## Commands
 
+### `search` - Search Online Skills
+
+Search for skills in the skill registry.
+
+```bash
+npx skill4agent search <keyword> [options]
+```
+
+| Option | Description | Default |
+|--------|-------------|---------|
+| `-l, --limit` | Number of results to return | 10 |
+
+**Output fields:**
+- **source**: Repository source (e.g., `vercel-labs-agent-skills`)
+- **skill_name**: Skill name
+- **category**: Skill category
+- **description**: Full skill description
+- **tags**: Skill tags
+- **installs**: Total installation count
+
 ### `add` - Interactive Installation
 
 Interactive installation with prompts for configuration options.
