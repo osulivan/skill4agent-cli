@@ -119,7 +119,6 @@ export interface SearchResult {
   categoryName: string;
   totalInstalls: number;
   relevance: number;
-  download_zip_url: Array<{english_version?: string; chinese_version?: string}>;
   has_script: boolean;
   script_check_result?: string;
   script_check_notes?: string | null;

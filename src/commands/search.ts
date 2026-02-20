@@ -23,18 +23,6 @@ export async function search(query: string, limit: number = 10): Promise<void> {
       console.log(`description: ${skill.description || 'N/A'}`);
       console.log(`tags: ${skill.tags || 'N/A'}`);
       console.log(`installs: ${skill.totalInstalls}`);
-      
-      if (skill.download_zip_url && skill.download_zip_url.length > 0) {
-        for (const url of skill.download_zip_url) {
-          if (url.english_version) {
-            console.log(`download_zip_url: ${url.english_version}`);
-          }
-          if (url.chinese_version) {
-            console.log(`download_zip_url: ${url.chinese_version}`);
-          }
-        }
-      }
-      
       console.log(`has_script: ${skill.has_script}`);
       if (skill.has_script && skill.script_check_result) {
         console.log(`script_check_result: ${skill.script_check_result}`);
@@ -43,7 +31,7 @@ export async function search(query: string, limit: number = 10): Promise<void> {
         }
       }
       
-      console.log('---');
+      console.log(chalk.cyan('═══════════════════════════════════════════════════════════════════════════════════════════════'));
     }
 
     console.log(chalk.blue('To install a skill, run:'));
