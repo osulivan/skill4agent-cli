@@ -31,6 +31,7 @@ export async function search(query: string, limit: number = 10, json: boolean = 
     console.log(chalk.blue(`\n🔍 Search Results for "${query}" (${result.returnedCount} of ${result.totalResults} results)\n`));
 
     for (const skill of result.skills) {
+      console.log(`${chalk.green('skillId:')} ${skill.skillId}`);
       console.log(`${chalk.green('source:')} ${skill.source}`);
       console.log(`${chalk.green('skill_name:')} ${skill.skillName}`);
       console.log(`${chalk.green('category:')} ${skill.categoryName || 'N/A'}`);
