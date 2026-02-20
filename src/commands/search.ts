@@ -17,14 +17,32 @@ export async function search(query: string, limit: number = 10): Promise<void> {
     console.log(chalk.blue(`\n🔍 Search Results for "${query}" (${result.returnedCount} of ${result.totalResults} results)\n`));
 
     for (const skill of result.skills) {
-      const source = skill.skillId.split('--')[1] || 'unknown';
-      
-      console.log(`source: ${source}`);
+      console.log(`source: ${skill.source}`);
       console.log(`skill_name: ${skill.skillName}`);
       console.log(`category: ${skill.categoryName || 'N/A'}`);
       console.log(`description: ${skill.description || 'N/A'}`);
       console.log(`tags: ${skill.tags || 'N/A'}`);
       console.log(`installs: ${skill.totalInstalls}`);
+      
+      if (skill.download_zip_url && skill.download_zip_url.length > 0) {
+        for (const url of skill.download_zip_url) {
+          if (url.english_version) {
+            console.log(`download_zip_url: ${url.english_version}`);
+          }
+          if (url.chinese_version) {
+            console.log(`download_zip_url: ${url.chinese_version}`);
+          }
+        }
+      }
+      
+      console.log(`has_script: ${skill.has_script}`);
+      if (skill.has_script && skill.script_check_result) {
+        console.log(`script_check_result: ${skill.script_check_result}`);
+        if (skill.script_check_notes) {
+          console.log(`script_check_notes: ${skill.script_check_notes}`);
+        }
+      }
+      
       console.log('---');
     }
 
