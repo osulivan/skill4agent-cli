@@ -73,6 +73,7 @@ npx skill4agent search <关键词> [选项]
 | 选项 | 说明 | 默认值 |
 |------|------|--------|
 | `-l, --limit` | 返回结果数量 | 10 |
+| `-j, --json` | 以 JSON 格式输出（对AI解析更友好） | false |
 
 **输出字段说明：**
 - **source**: 源仓库（如 `vercel-labs-agent-skills`）
@@ -81,6 +82,9 @@ npx skill4agent search <关键词> [选项]
 - **description**: 完整技能描述
 - **tags**: 技能标签
 - **installs**: 总安装量
+- **has_script**: 技能是否包含脚本（true/false）
+- **script_check_result**: 脚本检查结果（仅当 has_script 为 true 时显示）
+- **script_check_notes**: 脚本检查备注（仅当 script_check_result 不为 "safe" 时显示）
 
 ### `add` - 交互式安装
 

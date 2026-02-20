@@ -73,6 +73,7 @@ npx skill4agent search <keyword> [options]
 | Option | Description | Default |
 |--------|-------------|---------|
 | `-l, --limit` | Number of results to return | 10 |
+| `-j, --json` | Output in JSON format (more friendly for AI parsing) | false |
 
 **Output fields:**
 - **source**: Repository source (e.g., `vercel-labs-agent-skills`)
@@ -81,6 +82,9 @@ npx skill4agent search <keyword> [options]
 - **description**: Full skill description
 - **tags**: Skill tags
 - **installs**: Total installation count
+- **has_script**: Whether the skill contains scripts (true/false)
+- **script_check_result**: Script check result (only shown when has_script is true)
+- **script_check_notes**: Script check notes (only shown when script_check_result is not "safe")
 
 ### `add` - Interactive Installation
 

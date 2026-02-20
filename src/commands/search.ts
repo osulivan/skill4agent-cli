@@ -31,17 +31,17 @@ export async function search(query: string, limit: number = 10, json: boolean = 
     console.log(chalk.blue(`\n🔍 Search Results for "${query}" (${result.returnedCount} of ${result.totalResults} results)\n`));
 
     for (const skill of result.skills) {
-      console.log(`${chalk.green('source:')} ${chalk.bold(skill.source)}`);
-      console.log(`${chalk.green('skill_name:')} ${chalk.bold(skill.skillName)}`);
-      console.log(`${chalk.green('category:')} ${chalk.bold(skill.categoryName || 'N/A')}`);
-      console.log(`${chalk.green('description:')} ${chalk.bold(skill.description || 'N/A')}`);
-      console.log(`${chalk.green('tags:')} ${chalk.bold(skill.tags || 'N/A')}`);
-      console.log(`${chalk.green('installs:')} ${chalk.bold(skill.totalInstalls.toString())}`);
-      console.log(`${chalk.green('has_script:')} ${chalk.bold(skill.has_script.toString())}`);
+      console.log(`${chalk.green('source:')} ${skill.source}`);
+      console.log(`${chalk.green('skill_name:')} ${skill.skillName}`);
+      console.log(`${chalk.green('category:')} ${skill.categoryName || 'N/A'}`);
+      console.log(`${chalk.green('description:')} ${skill.description || 'N/A'}`);
+      console.log(`${chalk.green('tags:')} ${skill.tags || 'N/A'}`);
+      console.log(`${chalk.green('installs:')} ${skill.totalInstalls.toString()}`);
+      console.log(`${chalk.green('has_script:')} ${skill.has_script.toString()}`);
       if (skill.has_script && skill.script_check_result) {
-        console.log(`${chalk.green('script_check_result:')} ${chalk.bold(skill.script_check_result)}`);
+        console.log(`${chalk.green('script_check_result:')} ${skill.script_check_result}`);
         if (skill.script_check_notes) {
-          console.log(`${chalk.green('script_check_notes:')} ${chalk.bold(skill.script_check_notes)}`);
+          console.log(`${chalk.green('script_check_notes:')} ${skill.script_check_notes}`);
         }
       }
       
