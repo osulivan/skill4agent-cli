@@ -15,24 +15,33 @@ export async function search(query: string, limit: number = 10, json: boolean = 
     }
 
     if (json) {
-      console.log(JSON.stringify(result, null, 2));
+      const jsonResult = {
+        skills: result.skills.map((skill: any) => {
+          const { download_zip_url, ...rest } = skill;
+          return rest;
+        }),
+        totalResults: result.totalResults,
+        returnedCount: result.returnedCount,
+        query: result.query,
+      };
+      console.log(JSON.stringify(jsonResult, null, 2));
       return;
     }
 
     console.log(chalk.blue(`\n🔍 Search Results for "${query}" (${result.returnedCount} of ${result.totalResults} results)\n`));
 
     for (const skill of result.skills) {
-      console.log(`source: ${chalk.white(skill.source)}`);
-      console.log(`skill_name: ${chalk.white(skill.skillName)}`);
-      console.log(`category: ${chalk.white(skill.categoryName || 'N/A')}`);
-      console.log(`description: ${chalk.white(skill.description || 'N/A')}`);
-      console.log(`tags: ${chalk.white(skill.tags || 'N/A')}`);
-      console.log(`installs: ${chalk.white(skill.totalInstalls.toString())}`);
-      console.log(`has_script: ${chalk.white(skill.has_script.toString())}`);
+      console.log(`${chalk.green('source:')} ${chalk.bold(skill.source)}`);
+      console.log(`${chalk.green('skill_name:')} ${chalk.bold(skill.skillName)}`);
+      console.log(`${chalk.green('category:')} ${chalk.bold(skill.categoryName || 'N/A')}`);
+      console.log(`${chalk.green('description:')} ${chalk.bold(skill.description || 'N/A')}`);
+      console.log(`${chalk.green('tags:')} ${chalk.bold(skill.tags || 'N/A')}`);
+      console.log(`${chalk.green('installs:')} ${chalk.bold(skill.totalInstalls.toString())}`);
+      console.log(`${chalk.green('has_script:')} ${chalk.bold(skill.has_script.toString())}`);
       if (skill.has_script && skill.script_check_result) {
-        console.log(`script_check_result: ${chalk.white(skill.script_check_result)}`);
+        console.log(`${chalk.green('script_check_result:')} ${chalk.bold(skill.script_check_result)}`);
         if (skill.script_check_notes) {
-          console.log(`script_check_notes: ${chalk.white(skill.script_check_notes)}`);
+          console.log(`${chalk.green('script_check_notes:')} ${chalk.bold(skill.script_check_notes)}`);
         }
       }
       
