@@ -67,9 +67,11 @@ program
   .command('search <query>')
   .description('Search for skills')
   .option('-l, --limit <number>', 'Number of results to return', '10')
+  .option('-j, --json', 'Output in JSON format')
   .action(async (query: string, options: any) => {
     const limit = parseInt(options.limit) || 10;
-    await search(query, limit);
+    const json = options.json || false;
+    await search(query, limit, json);
   });
 
 program

@@ -2,7 +2,7 @@ import chalk from 'chalk';
 import { searchSkills } from '../api';
 import ora from 'ora';
 
-export async function search(query: string, limit: number = 10): Promise<void> {
+export async function search(query: string, limit: number = 10, json: boolean = false): Promise<void> {
   const spinner = ora(`Searching for "${query}"...`).start();
 
   try {
@@ -14,20 +14,25 @@ export async function search(query: string, limit: number = 10): Promise<void> {
       return;
     }
 
+    if (json) {
+      console.log(JSON.stringify(result, null, 2));
+      return;
+    }
+
     console.log(chalk.blue(`\n🔍 Search Results for "${query}" (${result.returnedCount} of ${result.totalResults} results)\n`));
 
     for (const skill of result.skills) {
-      console.log(`source: ${skill.source}`);
-      console.log(`skill_name: ${skill.skillName}`);
-      console.log(`category: ${skill.categoryName || 'N/A'}`);
-      console.log(`description: ${skill.description || 'N/A'}`);
-      console.log(`tags: ${skill.tags || 'N/A'}`);
-      console.log(`installs: ${skill.totalInstalls}`);
-      console.log(`has_script: ${skill.has_script}`);
+      console.log(`source: ${chalk.white(skill.source)}`);
+      console.log(`skill_name: ${chalk.white(skill.skillName)}`);
+      console.log(`category: ${chalk.white(skill.categoryName || 'N/A')}`);
+      console.log(`description: ${chalk.white(skill.description || 'N/A')}`);
+      console.log(`tags: ${chalk.white(skill.tags || 'N/A')}`);
+      console.log(`installs: ${chalk.white(skill.totalInstalls.toString())}`);
+      console.log(`has_script: ${chalk.white(skill.has_script.toString())}`);
       if (skill.has_script && skill.script_check_result) {
-        console.log(`script_check_result: ${skill.script_check_result}`);
+        console.log(`script_check_result: ${chalk.white(skill.script_check_result)}`);
         if (skill.script_check_notes) {
-          console.log(`script_check_notes: ${skill.script_check_notes}`);
+          console.log(`script_check_notes: ${chalk.white(skill.script_check_notes)}`);
         }
       }
       
