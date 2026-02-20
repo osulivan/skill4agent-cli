@@ -44,6 +44,9 @@ npm install -g @skill4agent/cli
 > - `<skill>`: The skill name (e.g., `frontend-design`)
 
 ```bash
+# Search for skills
+npx skill4agent search <keyword> [options]
+
 # Interactive installation (recommended for beginners)
 npx skill4agent add <source> <skill>
 
@@ -132,6 +135,16 @@ npx skill4agent uninstall <skill> --project
 ```
 
 ## Examples
+
+### Search Examples
+
+```bash
+# Search for skills (default 10 results)
+npx skill4agent search react
+
+# Search with custom limit
+npx skill4agent search react -l 5
+```
 
 ### Installation Examples
 

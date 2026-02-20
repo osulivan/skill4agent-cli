@@ -44,6 +44,9 @@ npm install -g @skill4agent/cli
 > - `<技能名>`: 技能名称（如 `frontend-design`）
 
 ```bash
+# 搜索在线技能
+npx skill4agent search <关键词> [选项]
+
 # 交互式安装（推荐新手，按照步骤选项安装）
 npx skill4agent add <源仓库> <技能名>
 
@@ -132,6 +135,16 @@ npx skill4agent uninstall <技能名> --project
 ```
 
 ## 示例
+
+### 搜索示例
+
+```bash
+# 搜索技能（默认返回10条结果）
+npx skill4agent search 前端设计
+
+# 搜索技能并指定返回数量
+npx skill4agent search 前端设计 -l 5
+```
 
 ### 安装示例
 
