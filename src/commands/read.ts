@@ -64,6 +64,7 @@ export async function read(source: string, skillName: string, type: 'original' |
 
     console.log(chalk.blue('  [Content]'));
     console.log(`    ${chalk.green('type:')} ${skill.content_type || 'N/A'}`);
+    console.log(`    ${chalk.green('SKILL.md content:')}`);
     if (skill.content) {
       console.log(chalk.gray('─'.repeat(80)));
       console.log(skill.content);
