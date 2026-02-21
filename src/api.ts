@@ -51,7 +51,7 @@ export async function downloadSkill(
 
 export async function getSkillInfo(topSource: string, skillName: string): Promise<{ skill: SkillInfo | null; sourceExists: boolean }> {
   try {
-    const url = `${API_BASE}/skills/info?top_source=${encodeURIComponent(topSource)}&skill_name=${encodeURIComponent(skillName)}`;
+    const url = `${API_BASE}/skills/info?source=${encodeURIComponent(topSource)}&skill_name=${encodeURIComponent(skillName)}`;
     const response = await axios.get(url);
     
     if (response.status === 404) {
@@ -126,7 +126,7 @@ export async function getSkillRead(
   type: 'original' | 'translated' = 'original'
 ): Promise<SkillReadResult | null> {
   try {
-    const url = `${API_BASE}/skills/info?top_source=${encodeURIComponent(topSource)}&skill_name=${encodeURIComponent(skillName)}&type=${type}`;
+    const url = `${API_BASE}/skills/info?source=${encodeURIComponent(topSource)}&skill_name=${encodeURIComponent(skillName)}&type=${type}`;
     const response = await axios.get(url);
     
     if (response.status === 404 || !response.data) {

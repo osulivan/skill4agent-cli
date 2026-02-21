@@ -27,7 +27,7 @@ export async function search(query: string, limit: number = 10, json: boolean = 
         readCommand: "npx skill4agent read <source> <skill_name>  # add '--type translated' if read translated version",
         installCommand: "npx skill4agent install <source> <skill_name>  # add '--type translated' if install translated version",
         skills: result.skills.map((skill: any) => {
-          const { download_zip_url, ...rest } = skill;
+          const { download_zip_url, read_skill_url, ...rest } = skill;
           return rest;
         }),
       };
