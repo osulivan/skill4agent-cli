@@ -58,7 +58,7 @@ export async function getSkillInfo(topSource: string, skillName: string): Promis
       return { skill: null, sourceExists: false };
     }
     
-    const skill = response.data.data;
+    const skill = response.data;
     if (!skill) {
       return { skill: null, sourceExists: true };
     }
@@ -94,6 +94,66 @@ export async function getSkillInfo(topSource: string, skillName: string): Promis
   }
 }
 
+export interface SkillReadResult {
+  skillId: string;
+  source: string;
+  skillName: string;
+  description: string;
+  tags: string;
+  category: {
+    nameCn: string;
+    nameEn: string;
+  } | null;
+  totalInstalls: number;
+  download_zip_url: {english_version?: string; chinese_version?: string};
+  translation?: {
+    original_language?: string;
+    has_translation?: boolean;
+    translated_language?: string;
+  };
+  script?: {
+    has_script?: boolean;
+    script_check_result?: string | null;
+    script_check_notes?: string | null;
+  };
+  content: string | null;
+  content_type: string | null;
+}
+
+export async function getSkillRead(
+  topSource: string, 
+  skillName: string, 
+  type: 'original' | 'translated' = 'original'
+): Promise<SkillReadResult | null> {
+  try {
+    const url = `${API_BASE}/skills/info?top_source=${encodeURIComponent(topSource)}&skill_name=${encodeURIComponent(skillName)}&type=${type}`;
+    const response = await axios.get(url);
+    
+    if (response.status === 404 || !response.data) {
+      return null;
+    }
+    
+    const skill = response.data;
+    
+    return {
+      skillId: skill.skillId,
+      source: skill.source,
+      skillName: skill.skillName,
+      description: skill.description,
+      tags: skill.tags,
+      category: skill.category,
+      totalInstalls: skill.totalInstalls,
+      download_zip_url: skill.download_zip_url || {},
+      translation: skill.translation,
+      script: skill.script,
+      content: skill.content || null,
+      content_type: skill.content_type || null,
+    };
+  } catch (error) {
+    return null;
+  }
+}
+
 export function getDownloadUrl(topSource: string, skillName: string, type: 'original' | 'translated' = 'original'): string {
   return `${API_BASE}/download?top_source=${encodeURIComponent(topSource)}&skill_name=${encodeURIComponent(skillName)}&type=${type}`;
 }
@@ -106,7 +166,6 @@ export async function incrementInstallCount(topSource: string, skillName: string
       skill_name: skillName,
     });
   } catch (error) {
-    // 静默失败，不影响安装流程
   }
 }
 

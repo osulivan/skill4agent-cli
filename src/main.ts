@@ -4,6 +4,7 @@ import { install } from './commands/install';
 import { add } from './commands/add';
 import { list, update } from './commands/list';
 import { search } from './commands/search';
+import { read } from './commands/read';
 import { uninstall } from './commands/uninstall';
 import { readFileSync } from 'fs';
 import { join } from 'path';
@@ -72,6 +73,17 @@ program
     const limit = parseInt(options.limit) || 10;
     const json = options.json || false;
     await search(query, limit, json);
+  });
+
+program
+  .command('read <top_source> <skill_name>')
+  .description('Read skill details and SKILL.md content')
+  .option('--type <type>', 'Content type: original or translated', 'original')
+  .option('-j, --json', 'Output in JSON format')
+  .action(async (topSource: string, skillName: string, options: any) => {
+    const type = options.type === 'translated' ? 'translated' : 'original';
+    const json = options.json || false;
+    await read(topSource, skillName, type, json);
   });
 
 program

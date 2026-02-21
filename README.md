@@ -47,6 +47,9 @@ npm install -g @skill4agent/cli
 # Search for skills
 npx skill4agent search <keyword> [options]
 
+# View skill details (includes SKILL.md content)
+npx skill4agent read <source> <skill_name> [options]
+
 # Interactive installation (recommended for beginners)
 npx skill4agent add <source> <skill>
 
@@ -85,6 +88,32 @@ npx skill4agent search <keyword> [options]
 - **has_script**: Whether the skill contains scripts (true/false)
 - **script_check_result**: Script check result (only shown when has_script is true)
 - **script_check_notes**: Script check notes (only shown when script_check_result is not "safe")
+
+### `read` - Read Skill Details
+
+View detailed information and content of a skill.
+
+```bash
+npx skill4agent read <source> <skill_name> [options]
+```
+
+| Option | Description | Default |
+|--------|-------------|---------|
+| `--type` | Content type: `original` or `translated` | original |
+| `-j, --json` | Output in JSON format | false |
+
+**Output fields:**
+- **skillId**: Skill ID
+- **source**: Repository source
+- **skill_name**: Skill name
+- **description**: Skill description
+- **tags**: Skill tags
+- **category**: Skill category
+- **installs**: Total installation count
+- **Translation**: Original language and translation availability
+- **Script**: Script check results
+- **ContentType**: Content type (original/translated)
+- **Content**: SKILL.md content
 
 ### `add` - Interactive Installation
 
@@ -148,6 +177,16 @@ npx skill4agent search react
 
 # Search with custom limit
 npx skill4agent search react -l 5
+```
+
+### View Details Examples
+
+```bash
+# View original content (non-JSON format, view original content)
+npx skill4agent read anthropics/skills frontend-design
+
+# View translated content (JSON format, view translated content)
+npx skill4agent read anthropics/skills frontend-design --type translated -j
 ```
 
 ### Installation Examples

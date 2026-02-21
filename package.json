@@ -1,6 +1,6 @@
 {
   "name": "@skill4agent/cli",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "CLI tool for installing agent skills",
   "main": "dist/main.js",
   "bin": {

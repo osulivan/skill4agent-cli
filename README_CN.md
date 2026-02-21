@@ -47,6 +47,9 @@ npm install -g @skill4agent/cli
 # 搜索在线技能
 npx skill4agent search <关键词> [选项]
 
+# 查看技能详情（包括SKILL.md内容）
+npx skill4agent read <源仓库> <技能名> [选项]
+
 # 交互式安装（推荐新手，按照步骤选项安装）
 npx skill4agent add <源仓库> <技能名>
 
@@ -85,6 +88,32 @@ npx skill4agent search <关键词> [选项]
 - **has_script**: 技能是否包含脚本（true/false）
 - **script_check_result**: 脚本检查结果（仅当 has_script 为 true 时显示）
 - **script_check_notes**: 脚本检查备注（仅当 script_check_result 不为 "safe" 时显示）
+
+### `read` - 查看技能详情
+
+查看技能的详细信息和内容。
+
+```bash
+npx skill4agent read <源仓库> <技能名> [选项]
+```
+
+| 选项 | 说明 | 默认值 |
+|------|------|--------|
+| `--type` | 内容类型：`original` 或 `translated` | original |
+| `-j, --json` | 以 JSON 格式输出 | false |
+
+**输出字段说明：**
+- **skillId**: 技能ID
+- **source**: 源仓库
+- **skill_name**: 技能名称
+- **description**: 技能描述
+- **tags**: 技能标签
+- **category**: 技能分类
+- **installs**: 安装次数
+- **Translation**: 原始语言和翻译情况
+- **Script**: 脚本检查结果
+- **ContentType**: 内容类型（original/translated）
+- **Content**: SKILL.md 内容
 
 ### `add` - 交互式安装
 
@@ -148,6 +177,16 @@ npx skill4agent search 前端设计
 
 # 搜索技能并指定返回数量
 npx skill4agent search 前端设计 -l 5
+```
+
+### 查看详情示例
+
+```bash
+# 查看原始内容（非JSON格式，查看原版内容）
+npx skill4agent read anthropics/skills frontend-design
+
+# 查看翻译内容（JSON格式，查看翻译版内容）
+npx skill4agent read anthropics/skills frontend-design --type translated -j
 ```
 
 ### 安装示例
