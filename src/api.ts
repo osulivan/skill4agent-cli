@@ -119,9 +119,16 @@ export interface SearchResult {
   categoryName: string;
   totalInstalls: number;
   relevance: number;
-  has_script: boolean;
-  script_check_result?: string;
-  script_check_notes?: string | null;
+  translation?: {
+    original_language?: string;
+    has_translation?: boolean;
+    translated_language?: string;
+  };
+  script?: {
+    has_script?: boolean;
+    script_check_result?: string;
+    script_check_notes?: string | null;
+  };
 }
 
 export interface SearchResponse {
