@@ -33,7 +33,7 @@ function displaySummary(options: InstallOptions, skillInfo: any, typeDisplay: st
 
   console.log(chalk.blue('\n📊 Installation Summary'));
   console.log(chalk.gray('─'.repeat(50)));
-  console.log(`Skill: ${chalk.white(skillInfo.name)}`);
+  console.log(`Skill: ${chalk.white(skillInfo.skillName)}`);
   console.log(`Source: ${options.topSource}`);
   console.log(`Type: ${typeDisplay}`);
   console.log(`Scope: ${options.global ? 'Global' : 'Project'}`);
@@ -65,7 +65,7 @@ export async function install(options: InstallOptions): Promise<void> {
 
   const skillInfo = result.skill;
 
-  console.log(chalk.blue(`\n📦 Skill: ${chalk.white(skillInfo.name)}`));
+  console.log(chalk.blue(`\n📦 Skill: ${chalk.white(skillInfo.skillName)}`));
   console.log(chalk.gray(`   Category: ${skillInfo.category?.nameEn || 'N/A'} | Installs: ${skillInfo.totalInstalls}`));
 
   if (skillInfo.tags) {
