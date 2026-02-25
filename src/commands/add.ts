@@ -27,7 +27,7 @@ async function promptTypeSelection(skillInfo: SkillInfo): Promise<'original' | '
   const { type } = await inquirer.prompt({
     type: 'list',
     name: 'type',
-    message: `Select version for "${skillInfo.name}"`,
+    message: `Select version for "${skillInfo.skillName}"`,
     choices: [
       {
         name: `${originalName} (Original)`,
@@ -179,7 +179,7 @@ export async function add(topSource: string, skillName: string): Promise<void> {
 
   const skillInfo = result.skill;
 
-  console.log(chalk.blue(`\n📦 Skill: ${chalk.white(skillInfo.name)}`));
+  console.log(chalk.blue(`\n📦 Skill: ${chalk.white(skillInfo.skillName)}`));
   console.log(chalk.gray(`   Category: ${skillInfo.category?.nameEn || 'N/A'} | Installs: ${skillInfo.totalInstalls}`));
 
   if (skillInfo.tags) {

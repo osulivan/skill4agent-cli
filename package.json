@@ -1,6 +1,6 @@
 {
   "name": "@skill4agent/cli",
-  "version": "1.0.25",
+  "version": "1.0.26",
   "description": "CLI tool for installing agent skills",
   "main": "dist/main.js",
   "bin": {
@@ -33,7 +33,7 @@
     "chalk": "^4.1.2",
     "commander": "^11.1.0",
     "fs-extra": "^11.1.1",
-    "inquirer": "^9.2.0"
+    "inquirer": "^8.2.6"
   },
   "devDependencies": {
     "@types/adm-zip": "^0.5.2",
