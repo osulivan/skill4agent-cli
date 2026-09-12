@@ -23,6 +23,11 @@ dist/
 # OS
 .DS_Store
 Thumbs.db
+._*
+
+# Python
+default.profraw
+__pycache__/
 
 # Logs
 logs/
